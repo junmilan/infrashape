@@ -72,13 +72,20 @@ if (videoOpen && videoModal && modalVideo) {
     return s + '× týdně';
   };
 
+  const clamp = (v, min, max, fallback) => {
+    const n = parseInt(v, 10);
+    if (Number.isNaN(n)) return fallback;
+    return Math.min(max, Math.max(min, n));
+  };
+
   function update() {
-    const w = parseInt(weightEl.value, 10);
-    const s = parseInt(sessionsEl.value, 10);
+    const w = clamp(weightEl.value, 40, 150, 70);
+    const s = clamp(sessionsEl.value, 1, 5, 2);
+    const m = minutes === 60 ? 60 : 30;
     weightOut.textContent = w + ' kg';
     sessionsOut.textContent = sessionsLabel(s);
 
-    const perSession = KCAL_PER_MIN_BASE * (w / REF_WEIGHT) * minutes;
+    const perSession = KCAL_PER_MIN_BASE * (w / REF_WEIGHT) * m;
     const perWeek = perSession * s;
     const perMonth = perWeek * 4.33;
 

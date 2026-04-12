@@ -1,0 +1,3 @@
+Contact: mailto:infrashapebrno@gmail.com
+Preferred-Languages: cs, en
+Canonical: https://infrashape.vercel.app/.well-known/security.txt

@@ -65,9 +65,12 @@ if (videoOpen && videoModal && modalVideo) {
   const ACTIVITY = { run: 10.5, bike: 8, swim: 7 };
 
   let minutes = 30;
-  const fmt = (n) => Math.round(n).toLocaleString('cs-CZ');
-  const fmt1 = (n) => n.toFixed(1).replace('.', ',');
+  const isEn = document.documentElement.lang === 'en';
+  const locale = isEn ? 'en-US' : 'cs-CZ';
+  const fmt = (n) => Math.round(n).toLocaleString(locale);
+  const fmt1 = (n) => isEn ? n.toFixed(1) : n.toFixed(1).replace('.', ',');
   const sessionsLabel = (s) => {
+    if (isEn) return s + '× per week';
     if (s === 1) return '1× týdně';
     return s + '× týdně';
   };
@@ -128,7 +131,7 @@ const animateCounter = (el) => {
   const step = (now) => {
     const p = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - p, 3);
-    el.textContent = Math.floor(eased * target).toLocaleString('cs-CZ');
+    el.textContent = Math.floor(eased * target).toLocaleString(document.documentElement.lang === 'en' ? 'en-US' : 'cs-CZ');
     if (p < 1) requestAnimationFrame(step);
   };
   requestAnimationFrame(step);

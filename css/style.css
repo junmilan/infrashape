@@ -121,6 +121,33 @@ p { margin: 0 0 1em; color: var(--muted); }
   transition: color .2s;
 }
 .nav a:hover { color: var(--pink-600); }
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 16px;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.lang-switch a,
+.lang-switch .lang-current {
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color .2s, background .2s;
+}
+.lang-switch a {
+  color: var(--muted);
+}
+.lang-switch a:hover {
+  color: var(--pink-700);
+  background: var(--pink-50);
+}
+.lang-switch .lang-current {
+  color: var(--pink-700);
+  background: var(--pink-100);
+}
 .nav-toggle {
   display: none;
   background: none;

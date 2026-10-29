@@ -742,3 +742,58 @@ html.js-reveal [data-reveal].is-visible { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
   html.js-reveal [data-reveal] { opacity: 1; transform: none; transition: none; }
 }
+
+/* Listovací režim (js/flip.js přidá .flip--active jen na desktopu) */
+.flip-dots { display: none; }
+.flip.flip--active {
+  position: relative;
+  display: block;
+  max-width: none;
+  padding: 0;
+  height: calc(100vh - var(--header-h));
+  overflow: hidden;
+  background: #fff;
+}
+.flip--active .flip-panel {
+  position: absolute;
+  inset: 0;
+  grid-template-columns: 1.15fr .85fr;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .7s ease, visibility 0s linear .7s;
+}
+.flip--active .flip-panel.is-current { opacity: 1; visibility: visible; transition: opacity .7s ease; }
+.flip--active .flip-media { min-height: 0; }
+.flip--active .flip-media img { transform: scale(1.08); transition: transform 1.4s cubic-bezier(.2, .7, .2, 1); }
+.flip--active .is-current .flip-media img { transform: scale(1); }
+.flip--active .flip-text { padding: 60px 8vw 60px 64px; }
+.flip--active .flip-text > * { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
+.flip--active .is-current .flip-text > * { opacity: 1; transform: none; }
+.flip--active .is-current .flip-text > :nth-child(2) { transition-delay: .08s; }
+.flip--active .is-current .flip-text > :nth-child(3) { transition-delay: .16s; }
+.flip--active .is-current .flip-text > :nth-child(4) { transition-delay: .24s; }
+.flip--active .flip-dots {
+  position: absolute;
+  right: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.flip-dots button {
+  border: 0;
+  background: none;
+  padding: 4px 0;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: .95rem;
+  color: var(--muted);
+  opacity: .5;
+  cursor: pointer;
+  transition: opacity .3s, color .3s;
+}
+.flip-dots button.is-current, .flip-dots button:hover { opacity: 1; color: var(--pink-strong); }

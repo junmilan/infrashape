@@ -16,12 +16,13 @@ export function scrollToTarget(target) {
   const el = typeof target === 'string' ? document.querySelector(target) : target;
   if (!el) return;
   if (lenis) {
+    // Cíl jako číslo z window.scrollY: Lenis po stop()/start() drží zastaralou pozici.
+    const targetY = () => el.getBoundingClientRect().top + window.scrollY + headerOffset();
     // Po doběhnutí jednou dorovnat — líně načtené obrázky nad cílem mohou posunout layout.
-    lenis.scrollTo(el, {
-      offset: headerOffset(),
+    lenis.scrollTo(targetY(), {
       onComplete: () => {
         const drift = el.getBoundingClientRect().top + headerOffset();
-        if (Math.abs(drift) > 4) lenis.scrollTo(el, { offset: headerOffset(), duration: 0.6 });
+        if (Math.abs(drift) > 4) lenis.scrollTo(targetY(), { duration: 0.6 });
       },
     });
   } else {

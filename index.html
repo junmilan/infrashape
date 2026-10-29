@@ -92,52 +92,50 @@
         <span class="eyebrow" data-reveal>Co je InfraShape</span>
         <h2 data-reveal>Pět technologií, <em>jeden trénink</em></h2>
       </div>
-      <div class="flip" aria-roledescription="carousel" aria-label="Technologie InfraShape">
-        <article class="flip-panel">
-          <div class="flip-media"><img src="img/device.webp" alt="Přístroj InfraShape Horizontal" loading="lazy" /></div>
-          <div class="flip-text">
-            <span class="flip-num">01</span>
-            <h3>InfraShape Horizontal</h3>
-            <p class="flip-sub">Kolo vleže, které pracuje za vás</p>
-            <p>Inovativní fitness přístroj kombinuje horizontální ležící kolo s pokročilými technologiemi pro spalování tuků a tvarování postavy. Cvičení vleže šetří klouby i páteř, takže se hodí i pro začátečníky nebo při nadváze.</p>
-          </div>
-        </article>
-        <article class="flip-panel">
-          <div class="flip-media"><img src="img/hero.webp" alt="Infračervené světlo v kabině přístroje" loading="lazy" /></div>
-          <div class="flip-text">
-            <span class="flip-num">02</span>
-            <h3>Infračervené záření</h3>
-            <p class="flip-sub">Teplo, které urychlí metabolismus</p>
-            <p>Infračervené světlo hluboce prohřívá tkáně, urychluje metabolismus a podporuje spalování tuků i detoxikaci organismu.</p>
-          </div>
-        </article>
-        <article class="flip-panel">
-          <div class="flip-media"><img src="img/studio.png" alt="Studio InfraShape Brno" loading="lazy" /></div>
-          <div class="flip-text">
-            <span class="flip-num">03</span>
-            <h3>Vakuová masáž</h3>
-            <p class="flip-sub">Proti celulitidě a pro pevnou pokožku</p>
-            <p>Podtlak účinně bojuje proti celulitidě, zlepšuje krevní oběh a zpevňuje pokožku v problémových partiích.</p>
-          </div>
-        </article>
-        <article class="flip-panel">
-          <div class="flip-media"><img src="img/nahled.png" alt="Relaxace během tréninku" loading="lazy" /></div>
-          <div class="flip-text">
-            <span class="flip-num">04</span>
-            <h3>Péče o pleť a relax</h3>
-            <p class="flip-sub">Kolagen, LED, aromaterapie</p>
-            <p>Kolagenové lampy a LED terapie podporují pružnost a regeneraci pokožky, aromaterapie přidává chvíli klidu. Během tréninku si na obrazovce pustíte seriál nebo hudbu.</p>
-          </div>
-        </article>
-        <article class="flip-panel">
-          <div class="flip-media"><img src="img/story-bg.webp" alt="InfraShape Brno" loading="lazy" /></div>
-          <div class="flip-text">
-            <span class="flip-num">05</span>
-            <h3>EMS trénink</h3>
-            <p class="flip-sub">20 minut, 95 % svalových vláken</p>
-            <p>Jemné elektrické impulzy aktivují až 95 % svalových vláken najednou. Trénink trvá jen 20 minut, pomáhá tvarovat postavu, zpevnit svaly a ulevit od bolesti zad — bez zvedání těžkých činek.</p>
-          </div>
-        </article>
+      <div class="story" style="--count: 5" role="region" aria-label="Technologie InfraShape">
+        <div class="story-sticky">
+          <article class="story-slide" aria-roledescription="snímek" aria-label="01 z 05">
+            <img src="img/device.webp" alt="Přístroj InfraShape Horizontal" loading="lazy" />
+            <div class="story-content">
+              <span class="story-num">01</span>
+              <h3>InfraShape <em>Horizontal</em></h3>
+              <p>Kolo vleže, které šetří klouby i páteř a spaluje za vás.</p>
+            </div>
+          </article>
+          <article class="story-slide" aria-roledescription="snímek" aria-label="02 z 05">
+            <img src="img/hero.webp" alt="Infračervené světlo v kabině přístroje" loading="lazy" />
+            <div class="story-content">
+              <span class="story-num">02</span>
+              <h3>Infračervené <em>záření</em></h3>
+              <p>Hluboce prohřeje tkáně, urychlí metabolismus a podpoří spalování tuků.</p>
+            </div>
+          </article>
+          <article class="story-slide" aria-roledescription="snímek" aria-label="03 z 05">
+            <img src="img/studio.png" alt="Studio InfraShape Brno" loading="lazy" />
+            <div class="story-content">
+              <span class="story-num">03</span>
+              <h3>Vakuová <em>masáž</em></h3>
+              <p>Bojuje s celulitidou, zlepšuje krevní oběh a zpevňuje pokožku.</p>
+            </div>
+          </article>
+          <article class="story-slide" aria-roledescription="snímek" aria-label="04 z 05">
+            <img src="img/nahled.png" alt="Relaxace během tréninku" loading="lazy" />
+            <div class="story-content">
+              <span class="story-num">04</span>
+              <h3>Péče o pleť <em>a relax</em></h3>
+              <p>Kolagenové lampy, LED terapie a aromaterapie. A k tomu váš oblíbený seriál.</p>
+            </div>
+          </article>
+          <article class="story-slide" aria-roledescription="snímek" aria-label="05 z 05">
+            <img src="img/story-bg.webp" alt="InfraShape Brno" loading="lazy" />
+            <div class="story-content">
+              <span class="story-num">05</span>
+              <h3>EMS <em>trénink</em></h3>
+              <p>20 minut a až 95 % svalových vláken najednou — bez těžkých činek.</p>
+            </div>
+          </article>
+          <div class="story-dots" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
 
@@ -439,7 +437,7 @@
   <script src="js/script.js"></script>
   <script src="js/vendor/lenis.min.js"></script>
   <script type="module" src="js/scroll.js"></script>
-  <script type="module" src="js/flip.js"></script>
+  <script type="module" src="js/story.js"></script>
   <script type="module" src="js/popup.js"></script>
   <script type="module" src="js/directions.js"></script>
 </body>
